@@ -1,2 +1,1 @@
-# EJ-backend
-backend of Endless-journey
+401 final readme. need to do this.
