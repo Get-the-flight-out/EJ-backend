@@ -10,8 +10,8 @@ const lowfareSearch = require('../lib/amadeus-middleware').lowfareSearch;
 
 module.exports = function(router) {
   router.get('/lowfare-search', bodyParser, lowfareSearch, (request, response) => {
-    console.log('REQUEST:', request.body.results);
-    response.status(200).send(request.body.results.currency);
-    // response.status(200).json(request.body.results.currency);
+    console.log('REQUEST:', request.flightInfo.results);
+    // response.status(200).send(request.results.currency);
+    response.status(200).json(request.flightInfo.results);
   });
 };
