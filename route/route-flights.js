@@ -6,12 +6,15 @@ const bodyParser = require('body-parser').json();
 // const basicAuth = require('../lib/basic-auth');
 // const bearerAuth = require('../lib/bearer-auth');
 const lowfareSearch = require('../lib/amadeus-middleware').lowfareSearch;
+const inspirationSearch = require('../lib/amadeus-middleware').inspirationSearch;
 
 
 module.exports = function(router) {
   router.get('/lowfare-search', bodyParser, lowfareSearch, (request, response) => {
-    console.log('REQUEST:', request.flightInfo.results);
-    // response.status(200).send(request.results.currency);
-    response.status(200).json(request.flightInfo.results[0].itineraries[0]);
+    response.status(200).json(request.lowfare.results[0].itineraries[0]);
+  });
+
+  router.get('/inspiration-search', bodyParser, inspirationSearch, (request, response) => {
+    response.status(200).json(request.inspiration.results);
   });
 };
