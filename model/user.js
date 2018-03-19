@@ -11,7 +11,7 @@ const User = mongoose.Schema({
   password: {type: String, required: true},
   email: {type: String, required: true},
   // homeAirport: {type: String, required: true},
-  inspiration: {type: mongoose.Schema.Types.ObjectId, ref: 'inspiration'},
+  inspiration: {type: mongoose.Schema.Types.ObjectId, ref: 'inspiration', default: null},
   // admin: false,
   compareHash: {type: String, unique: true},
 });
