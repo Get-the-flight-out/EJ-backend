@@ -12,7 +12,7 @@
   <a href="#creators">Creators</a>
 </p>
 
-[![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
+[![forthebadge](https://forthebadge.com/images/badges/fuck-it-ship-it.svg)](https://forthebadge.com)[![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
 
 <br>
 
@@ -46,7 +46,6 @@ To use this application as a developer:
     "jest": "^22.1.4",
     "jsonwebtoken": "^8.1.1",
     "mongoose": "^5.0.3",
-    "multer": "^1.3.0",
     "superagent": "^3.8.2"
 ```
 * Add the following .env files
