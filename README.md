@@ -19,6 +19,7 @@
 <!-- TODO: add travis badge -->
 
 ## Overview
+GTFO is an application designed to aid users with their travel needs. The user can find the lowest fare flights from their local and find inspirational flights to top destinations around the world. This travel application provides the user the ability to not only find the lowest fare to one location, it allows the user to see low fare flights to airports near their destination during their travel time. This feature will help our clients to explore their country of destination and/or countries near their destination in the most affordable way possible. Happy traveling!
 
 
 
@@ -43,8 +44,6 @@ To use this application as a developer:
     "jest": "^22.2.2",
     "jsonwebtoken": "^8.1.1",
     "mongoose": "^5.0.4",
-    "node-schedule": "^1.3.0",
-    "twilio": "^3.11.3"
   },
   "devDependencies": {
     "faker": "^4.1.0",
@@ -82,12 +81,12 @@ Examples using HTTPie
 ```
 http POST :3000/api/v1/signup username=testuser
 email='test@test.com' password=password
-phoneNumber=+1555-555-555
 ```
 
 #### GET:
-* Retrieve flights
-  <!-- * Add appropriate endpoint: ...... TODO:... -->
+* Retrieve a User, Inspirational Searches or Lowfare Searches
+  * Add appropriate endpoint: signin, inspiration-search or lowfare-search
+  <!-- * Add additional enpoints if needed -->
   <!-- VERIFY THE USER INFO IS CORRECT -->
 
 ##### Get All
