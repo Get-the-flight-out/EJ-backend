@@ -36,7 +36,6 @@ mock.admin.createOne = () => {
     username: faker.internet.userName(),
     email: faker.internet.email(),
     admin: true,
-    activities: [],
   })
     .generatePasswordHash(resultUser.password)
     .then(user => resultUser.user = user)

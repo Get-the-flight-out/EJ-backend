@@ -10,14 +10,19 @@ module.exports = new class {
   checkAirport(arr, location) {
     let areaToSeach;
 
-    if (location.toString().toLowerCase() === 'usa') {
+
+    switch(location.toString().toLowerCase()) {
+    case 'usa':
       areaToSeach = usAirPorts;
-    }
-    if (location.toString().toLowerCase() === 'eu') {
+      break;
+    case 'eu':
       areaToSeach = euAirPorts;
-    }
-    if (location.toString().toLowerCase() === 'asia') {
+      break;
+    case 'asia':
       areaToSeach = asiaAirPorts;
+      break;
+    default:
+      return arr;
     }
 
     let final = [];

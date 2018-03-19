@@ -11,7 +11,6 @@ const User = mongoose.Schema({
   email: {type: String, required: true},
   // homeAirport: {type: String, required: true},
   inspirationId: {type: mongoose.Schema.Types.ObjectId, ref: 'inspiration', default: null},
-  // admin: false,
   compareHash: {type: String, unique: true},
 });
 
