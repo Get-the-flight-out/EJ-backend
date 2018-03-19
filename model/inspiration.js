@@ -4,14 +4,14 @@ const mongoose = require('mongoose');
 const User = require('./user');
 
 const Inspiration = mongoose.Schema({
-    searchResults: {type: String, required: true},
-    _timestamp: {type: Date},
-    userId: {type: mongoose.Schema.Types.ObjectId, required: true, ref: 'user'},
+  searchResults: {type: String, required: true},
+  _timestamp: {type: Date},
+  userId: {type: mongoose.Schema.Types.ObjectId, required: true, ref: 'user'},
 });
 
 Inspiration.pre('save', function (next) {
   console.log('PRE:', this.userId);
-  console.log('USER:', User);
+  console.log('USER:', this.User);
   User.findById(this.userId)
     .then(user => {
       console.log('USER:', user);
