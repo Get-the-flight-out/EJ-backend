@@ -4,6 +4,7 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const crypto = require('crypto');
 const mongoose = require('mongoose');
+const Inspiration = require('./inspiration');
 
 const User = mongoose.Schema({
   username: {type: String, required: true, unique: true},
@@ -13,7 +14,7 @@ const User = mongoose.Schema({
   inspiration: {type: mongoose.Schema.Types.ObjectId, ref: 'inspiration'},
   // admin: false,
   compareHash: {type: String, unique: true},
-}, {timestamps: true});
+});
 
 
 User.methods.generatePasswordHash = function(password) {
