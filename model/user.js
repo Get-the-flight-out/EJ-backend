@@ -9,6 +9,7 @@ const User = mongoose.Schema({
   username: {type: String, required: true, unique: true},
   password: {type: String, required: true},
   email: {type: String, required: true},
+  homeAirport: {type: String, required: true},
   // admin: false,
   compareHash: {type: String, unique: true},
 }, {timestamps: true});
@@ -36,7 +37,7 @@ User.methods.generateCompareHash = function() {
   this.compareHash = crypto.randomBytes(32).toString('hex');
   return this.save()
     .then(() => Promise.resolve(this.compareHash))
-    .catch(() => this.generateCompareHash()); 
+    .catch(() => this.generateCompareHash());
 };
 
 User.methods.generateToken = function() {
