@@ -19,7 +19,7 @@
 <!-- TODO: add travis badge -->
 
 ## Overview
-PetMinder is an application designed to send a text message to remind clients when to administer their pet's medications. Their Veterinary physician can fully set up the reminders for the client when the medication is prescribed. Reminders can be set for monthly medication like heartworm or flea/tick prevention or for daily medications. These reminders will increase the quality of life for both the pet and the owner.
+
 
 
 ## Getting Started
@@ -70,15 +70,7 @@ API_KEY=<api key>
 
 
 ## Functionality
-As a user, I want to be able to sign up with the following required information: username, password, email address, and phone number. A user can securely log in to the app after a successful sign up.
 
-In order to keep track of the pets medication needs, a user will enter relevant information about their pets and the medicine they must take.
-
-After pet and medicine information are entered, a user can then create a reminder for each pet that will notify the user as much as they decide.
-
-With the users phone number that is stored on signup, a user can choose to be notified via text message 1-3 times per day (morning, noon, and evening.)
-
-This app will help ensure owners give their pets the medicine they are supposed to take at the correct time.
 
 ## Route Examples
 
@@ -86,9 +78,17 @@ Examples using HTTPie
 
 #### POST:
 
+* Create a new User
+```
+http POST :3000/api/v1/signup username=testuser
+email='test@test.com' password=password
+phoneNumber=+1555-555-555
+```
+
 #### GET:
 * Retrieve flights
   <!-- * Add appropriate endpoint: ...... TODO:... -->
+  <!-- VERIFY THE USER INFO IS CORRECT -->
 
 ##### Get All
 * Example for how to retrieve inspirational searches
@@ -103,9 +103,16 @@ http GET http://localhost:3000/api/v1/inspiration-search origin=SEA max_price=50
 ```
 http GET http://localhost:3000/api/v1/lowfare-search origin=SEA destination=BKK departure_date=2018-09-15 max_price=1000
 ```
+* Example for how to retrieve all the Users in your database
+```
+http GET :3000/api/v1/signin 'Authorization:Bearer {token}'
+```
 
 ##### Get One
-
+* Example for how to retrieve a User
+```
+http -a testuser:password :3000/api/v1/signin 'Authorization:Bearer {token}
+```
 
 #### PUT:
 
