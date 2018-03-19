@@ -6,6 +6,15 @@ const User = require('./user');
 const Inspiration = mongoose.Schema({
   searchResults: {type: String, required: true},
   _timestamp: {type: Date},
+  flightQueryData: {
+    apikey: {type: String, required: true},
+    origin: {type: String, required: true},
+    direct: {type: Boolean},
+    duration: {type: Number},
+    max_price: {type: Number},
+    destination: {type: String},
+    departure_date: {type: Number},
+  },
   userId: {type: mongoose.Schema.Types.ObjectId, required: true, ref: 'user'},
 });
 
