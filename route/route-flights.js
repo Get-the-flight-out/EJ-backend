@@ -1,6 +1,6 @@
 'use strict';
 
-// const checkArea = require('../top-airports/top-airports');
+const checkArea = require('../top-airports/top-airports');
 const bodyParser = require('body-parser').json();
 const bearerAuth = require('../lib/bearer-auth');
 const lowfareSearch = require('../lib/amadeus-middleware').lowfareSearch;
@@ -14,8 +14,8 @@ module.exports = function(router) {
   });
 
   router.get('/inspiration-search', bodyParser, bearerAuth, inspirationSearch, (request, response) => {
-    // let test = checkArea.checkAirport(request.inspiration.results, request.body.area);
-    // response.status(200).json(test);
-    response.status(200).json(request.inspiration);
+    let test = checkArea.checkAirport(request.inspiration.results, request.body.area);
+    response.status(200).json(test);
+    // response.status(200).json(request.inspiration);
   });
 };
