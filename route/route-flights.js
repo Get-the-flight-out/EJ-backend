@@ -16,7 +16,6 @@ module.exports = function(router) {
   router.get('/inspiration-search', bodyParser, bearerAuth, inspirationSearch, (request, response) => {
     // let test = checkArea.checkAirport(request.inspiration.results, request.body.area);
     // response.status(200).json(test);
-    console.log('INSPIRATION', request.user.inspiration);
     response.status(200).json(request.inspiration);
   });
 };
