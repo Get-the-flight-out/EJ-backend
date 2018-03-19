@@ -4,14 +4,17 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const crypto = require('crypto');
 const mongoose = require('mongoose');
+const Inspiration = require('./inspiration');
 
 const User = mongoose.Schema({
   username: {type: String, required: true, unique: true},
   password: {type: String, required: true},
   email: {type: String, required: true},
+  // homeAirport: {type: String, required: true},
+  inspiration: {type: mongoose.Schema.Types.ObjectId, ref: 'inspiration'},
   // admin: false,
   compareHash: {type: String, unique: true},
-}, {timestamps: true});
+});
 
 
 User.methods.generatePasswordHash = function(password) {
@@ -36,7 +39,7 @@ User.methods.generateCompareHash = function() {
   this.compareHash = crypto.randomBytes(32).toString('hex');
   return this.save()
     .then(() => Promise.resolve(this.compareHash))
-    .catch(() => this.generateCompareHash()); 
+    .catch(() => this.generateCompareHash());
 };
 
 User.methods.generateToken = function() {
@@ -44,5 +47,13 @@ User.methods.generateToken = function() {
     .then(compareHash => jwt.sign({token: compareHash}, process.env.APP_SECRET))
     .catch(err => err);
 };
+
+User.post('remove', function(doc, next) {
+  Inspiration.findById(doc.inspiration)
+    // delete the inspiration data
+    .then(data => data.remove())
+    .then(next)
+    .catch(next);
+});
 
 module.exports = mongoose.model('user', User);
