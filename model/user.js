@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const crypto = require('crypto');
 const mongoose = require('mongoose');
-const Inspiration = require('./inspiration');
+// const Inspiration = require('./inspiration');
 
 const User = mongoose.Schema({
   username: {type: String, required: true, unique: true},
@@ -48,12 +48,12 @@ User.methods.generateToken = function() {
     .catch(err => err);
 };
 
-User.post('remove', function(doc, next) {
-  Inspiration.findById(doc.inspiration)
-    // delete the inspiration data
-    .then(data => data.remove())
-    .then(next)
-    .catch(next);
-});
+// User.post('remove', function(doc, next) {
+//   Inspiration.findById(doc.inspiration)
+//     // delete the inspiration data
+//     .then(data => data.remove())
+//     .then(next)
+//     .catch(next);
+// });
 
 module.exports = mongoose.model('user', User);
