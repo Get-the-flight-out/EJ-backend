@@ -21,8 +21,6 @@
 ## Overview
 GTFO is an application designed to aid users with their travel needs. The user can find the lowest fare flights from their local and find inspirational flights to top destinations around the world. This travel application provides the user the ability to not only find the lowest fare to one location, it allows the user to see low fare flights to airports near their destination during their travel time. This feature will help our clients to explore their country of destination and/or countries near their destination in the most affordable way possible. Happy traveling!
 
-
-
 ## Getting Started
 To use this application as a developer:
 * Install [NPM](https://www.npmjs.com/get-npm), [HTTPie](https://httpie.org/) and [MongoDB](https://docs.mongodb.com/manual/administration/install-enterprise/)
@@ -35,21 +33,21 @@ To use this application as a developer:
 <!-- TODO: change depending what dependencies we need -->
 
 ```
-"dependencies": {
+  "dependencies": {
     "bcrypt": "^1.0.3",
     "body-parser": "^1.18.2",
     "cors": "^2.8.4",
+    "debug": "^3.1.0",
+    "del": "^3.0.0",
     "dotenv": "^5.0.0",
+    "eslint": "^4.17.0",
     "express": "^4.16.2",
-    "jest": "^22.2.2",
-    "jsonwebtoken": "^8.1.1",
-    "mongoose": "^5.0.4",
-  },
-  "devDependencies": {
     "faker": "^4.1.0",
-    "jest-cli": "^22.2.2",
+    "jest": "^22.1.4",
+    "jsonwebtoken": "^8.1.1",
+    "mongoose": "^5.0.3",
+    "multer": "^1.3.0",
     "superagent": "^3.8.2"
-  }
 ```
 * Add the following .env files
 
@@ -142,3 +140,10 @@ This project uses Travis-CI for continuous integration. Every Pull Request to th
 
 ## Creators
 The Creators of Get the Flight Out!
+
+<!-- TODO: need some pics, bios, GH and Linkedin links! -->
+
+* Heath
+* Steve
+* Jordan
+* Liza
