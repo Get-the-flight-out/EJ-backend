@@ -106,9 +106,7 @@ describe('GET /api/v1/users/:id?', function() {
         .then(response => {
           expect(response.status).toEqual(200);
           expect(response.body).toBeInstanceOf(Object);
-          expect(response.body).toHaveProperty('activities');
           expect(response.body).toHaveProperty('name');
-          expect(response.body.activities).toBeInstanceOf(Array);
         });
     });
   });

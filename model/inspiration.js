@@ -10,13 +10,9 @@ const Inspiration = mongoose.Schema({
 });
 
 Inspiration.pre('save', function (next) {
-  console.log('PRE:', this.userId);
-  console.log('USER:', this.User);
   User.findById(this.userId)
     .then(user => {
-      console.log('USER:', user);
-      console.log('THIS:', this._id);
-      user.inspiration = this._id;
+      user.inspirationId = this._id;
       user.save();
     })
     .then(next)
