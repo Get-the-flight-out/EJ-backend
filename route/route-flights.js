@@ -13,8 +13,7 @@ module.exports = function(router) {
   });
 
   router.get('/inspiration-search', bearerAuth, inspirationSearch, (request, response) => {
-    let test = checkArea.checkAirport(request.inspiration.results, request.body.area);
+    let test = checkArea.checkAirport(request.inspiration.results, request.query.area);
     response.status(200).json(test);
-    // response.status(200).json(request.inspiration);
   });
 };

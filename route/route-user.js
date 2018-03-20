@@ -10,7 +10,6 @@ module.exports = function(router) {
   router.post('/signup', bodyParser, (request, response) => {
     let pw = request.body.password;
     delete request.body.password;
-    // if (request.body.username === process.env.ADMIN_CODE) request.body.admin = true;
 
     let user = new User(request.body);
 
@@ -69,6 +68,18 @@ module.exports = function(router) {
         return errorHandler(err,response);
       });
   });
+
+  //-------------------
+  router.get('/findme', bearerAuth, (req, res, next) => {
+    User.findById(req.user._id)
+      .then(profile => {
+        if(!profile)
+          return next(new Error(404, 'NOT FOUND ERROR: profile not found'));
+        res.json(profile);
+      })
+      .catch(next);
+  });
+  //--------------------
 
   router.put('/users/:id', bearerAuth, bodyParser, (request, response) => {
     return User.findById(request.params.id)
