@@ -1,7 +1,6 @@
 'use strict';
 
 const checkArea = require('../top-airports/top-airports');
-const bodyParser = require('body-parser').json();
 const bearerAuth = require('../lib/bearer-auth');
 const lowfareSearch = require('../lib/amadeus-middleware').lowfareSearch;
 const inspirationSearch = require('../lib/amadeus-middleware').inspirationSearch;
@@ -14,6 +13,7 @@ module.exports = function(router) {
   });
 
   router.get('/inspiration-search', bearerAuth, inspirationSearch, (request, response) => {
+    console.log('inside the route', request.body);
     let test = checkArea.checkAirport(request.inspiration.results, request.body.area);
     response.status(200).json(test);
     // response.status(200).json(request.inspiration);

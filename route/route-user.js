@@ -70,6 +70,21 @@ module.exports = function(router) {
       });
   });
 
+  //-------------------
+  router.get('/test', bearerAuth, (req, res, next) => {
+    console.log('in the back end');
+    console.log('user id', req.user._id);
+    User.findById(req.user._id)
+      .then(profile => {
+        console.log('test', profile);
+        if(!profile)
+          return next(new Error(404, 'NOT FOUND ERROR: profile not found'));
+        res.json(profile);
+      })
+      .catch(next);
+  });
+  //--------------------
+
   router.put('/users/:id', bearerAuth, bodyParser, (request, response) => {
     return User.findById(request.params.id)
       .then(user => {
