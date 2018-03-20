@@ -13,9 +13,7 @@ module.exports = function(router) {
   });
 
   router.get('/inspiration-search', bearerAuth, inspirationSearch, (request, response) => {
-    console.log('inside the route', request.body);
-    let test = checkArea.checkAirport(request.inspiration.results, request.body.area);
+    let test = checkArea.checkAirport(request.inspiration.results, request.query.area);
     response.status(200).json(test);
-    // response.status(200).json(request.inspiration);
   });
 };

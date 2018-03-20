@@ -9,7 +9,7 @@ const User = mongoose.Schema({
   username: {type: String, required: true, unique: true},
   password: {type: String, required: true},
   email: {type: String, required: true},
-  // homeAirport: {type: String, required: true},
+  homeAirport: {type: String, required: true},
   inspirationId: {type: mongoose.Schema.Types.ObjectId, ref: 'inspiration', default: null},
   compareHash: {type: String, unique: true},
 });
