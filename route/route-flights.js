@@ -1,7 +1,6 @@
 'use strict';
 
 const checkArea = require('../top-airports/top-airports');
-const bodyParser = require('body-parser').json();
 const bearerAuth = require('../lib/bearer-auth');
 const lowfareSearch = require('../lib/amadeus-middleware').lowfareSearch;
 const inspirationSearch = require('../lib/amadeus-middleware').inspirationSearch;
