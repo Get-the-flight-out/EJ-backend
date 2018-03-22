@@ -21,6 +21,8 @@ module.exports = new class {
     case 'asia':
       areaToSeach = asiaAirPorts;
       break;
+    case 'all':
+      return arr;
     default:
       return arr;
     }
