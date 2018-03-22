@@ -14,10 +14,9 @@ describe('POST /api/v1/signup', function() {
     beforeAll(() => {
       this.mockUser = {
         username: faker.internet.userName(),
-        password: faker.internet.password(),
         email: faker.internet.email(),
-        admin: false,
-        activities: [],
+        homeAirport: faker.internet.userName(),
+        password: faker.internet.userName(),
       };
       return superagent.post(`:${process.env.PORT}/api/v1/signup`)
         .send(this.mockUser)
@@ -41,8 +40,9 @@ describe('POST /api/v1/signup', function() {
     it('should return a 404 NOT FOUND status code', () => {
       this.mockUser = {
         username: faker.internet.userName(),
-        password: faker.internet.password(),
         email: faker.internet.email(),
+        homeAirport: faker.internet.userName(),
+        password: faker.internet.userName(),
       };
       return superagent.post(`:${process.env.PORT}/api/v1/NOTFOUND`)
         .send(this.mockUser)

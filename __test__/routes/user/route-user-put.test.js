@@ -48,7 +48,7 @@ describe('PUT /api/v1/users/:id?', function() {
         })
         .catch(err => expect(err.status).toEqual(401));
     });
-      
+
     it('should return a 400 BAD REQUEST on improperly formatted body', () => {
       let mockUser = null;
       return mock.user.createOne()
@@ -87,7 +87,7 @@ describe('PUT /api/v1/users/:id?', function() {
         return superagent.post(`:${process.env.PORT}/api/v1/signup`)
           .send(this.mockUser)
           .then(response => this.response = response)
-          .catch(console.log);
+          .catch('failed');
       });
       // let mockUser2 = null;
       return mock.user.createOne()

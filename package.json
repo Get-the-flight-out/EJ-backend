@@ -35,10 +35,10 @@
     ],
     "coverageThreshold": {
       "global": {
-        "branches": 40,
-        "functions": 40,
-        "lines": 40,
-        "statements": 40
+        "branches": 85,
+        "functions": 85,
+        "lines": 85,
+        "statements": 85
       }
     }
   },
@@ -63,5 +63,8 @@
     "multer": "^1.3.0",
     "superagent": "^3.8.2"
   },
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "express-request-mock": "^2.0.0"
+  }
 }
