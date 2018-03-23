@@ -48,6 +48,7 @@
   },
   "author": "Liza, Steve, Jordan, Heath",
   "dependencies": {
+    "artillery": "^1.6.0-14",
     "bcrypt": "^1.0.3",
     "body-parser": "^1.18.2",
     "cors": "^2.8.4",
