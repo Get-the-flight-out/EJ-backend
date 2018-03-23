@@ -6,7 +6,6 @@ const faker = require('faker');
 const mock = module.exports = {};
 
 mock.user = {};
-
 mock.user.createOne = () => {
   let resultUser = {};
   resultUser.password = faker.internet.password();
@@ -14,7 +13,7 @@ mock.user.createOne = () => {
   return new User({
     username: faker.internet.userName(),
     email: faker.internet.email(),
-    homeAirport: faker.internet.userName(),
+    homeAirport: 'SEA',
     password: faker.internet.userName(),
   })
     .generatePasswordHash(resultUser.password)
