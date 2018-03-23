@@ -35,10 +35,10 @@
     ],
     "coverageThreshold": {
       "global": {
-        "branches": 40,
-        "functions": 40,
-        "lines": 40,
-        "statements": 40
+        "branches": 8,
+        "functions": 63,
+        "lines": 80,
+        "statements": 73
       }
     }
   },
@@ -48,6 +48,7 @@
   },
   "author": "Liza, Steve, Jordan, Heath",
   "dependencies": {
+    "artillery": "^1.6.0-14",
     "bcrypt": "^1.0.3",
     "body-parser": "^1.18.2",
     "cors": "^2.8.4",
@@ -63,5 +64,8 @@
     "multer": "^1.3.0",
     "superagent": "^3.8.2"
   },
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "express-request-mock": "^2.0.0"
+  }
 }

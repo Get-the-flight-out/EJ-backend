@@ -10,10 +10,10 @@ const Inspiration = mongoose.Schema({
     apikey: {type: String, required: true},
     origin: {type: String, required: true},
     direct: {type: Boolean},
-    duration: {type: Number},
-    max_price: {type: Number},
+    duration: {type: String},
+    max_price: {type: String},
     destination: {type: String},
-    departure_date: {type: Number},
+    departure_date: {type: Date},
   },
   userId: {type: mongoose.Schema.Types.ObjectId, required: true, ref: 'user'},
 });
