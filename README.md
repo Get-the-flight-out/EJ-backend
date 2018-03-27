@@ -1,6 +1,6 @@
 <h2 align="center">Get the Flight Out</h2>
 
-<!-- TODO: add logo -->
+![Logo](./logo.png)
 
 <p align="center">
   <a href="#getting-started">Getting Started</a> •
@@ -13,10 +13,10 @@
 </p>
 
 [![forthebadge](https://forthebadge.com/images/badges/fuck-it-ship-it.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
+[![Build Status](https://travis-ci.org/Get-the-flight-out/EJ-backend.svg?branch=master)](https://travis-ci.org/Get-the-flight-out/EJ-backend)
 
 <br>
 
-<!-- TODO: add travis badge -->
 
 ## Overview
 GTFO is an application designed to aid users with their travel needs. The user can find the lowest fare flights from their local and find inspirational flights to top destinations around the world. This travel application provides the user the ability to not only find the lowest fare to one location, it allows the user to see low fare flights to airports near their destination during their travel time. This feature will help our clients to explore their country of destination and/or countries near their destination in the most affordable way possible. Happy traveling!
@@ -30,10 +30,10 @@ To use this application as a developer:
 * Add .gitignore and .travis.yml files
 * Add the following dependencies
 
-<!-- TODO: change depending what dependencies we need -->
 
 ```
   "dependencies": {
+   "artillery": "^1.6.0-14",
     "bcrypt": "^1.0.3",
     "body-parser": "^1.18.2",
     "cors": "^2.8.4",
@@ -46,11 +46,10 @@ To use this application as a developer:
     "jest": "^22.1.4",
     "jsonwebtoken": "^8.1.1",
     "mongoose": "^5.0.3",
+    "multer": "^1.3.0",
     "superagent": "^3.8.2"
 ```
 * Add the following .env files
-
-<!-- TODO: add .test.env -->
 
 .env
 ```
@@ -63,6 +62,14 @@ API_KEY=<api key>
 * Start your server using nodemon or npm run start:watch
 * Connect to your database using npm run start-db
 * Open Mongo in the terminal, if needed.
+
+* Add the following .test.env files
+
+PORT=4000
+MONGODB_URI=mongodb://localhost/(your picked name)
+APP_SECRET=DBAP
+FLIGHT_URL=https://api.sandbox.amadeus.com/v1.2/flights
+API_KEY='your own api key'
 
 
 ## Functionality
@@ -83,8 +90,6 @@ email='test@test.com' password=password
 #### GET:
 * Retrieve a User, Inspirational Searches or Lowfare Searches
   * Add appropriate endpoint: signin, inspiration-search or lowfare-search
-  <!-- * Add additional enpoints if needed -->
-  <!-- VERIFY THE USER INFO IS CORRECT -->
 
 ##### Get All
 * Example for how to retrieve inspirational searches
@@ -110,18 +115,8 @@ http GET :3000/api/v1/signin 'Authorization:Bearer {token}'
 http -a testuser:password :3000/api/v1/signin 'Authorization:Bearer {token}
 ```
 
-#### PUT:
-
-
-#### DELETE:
-
-
 ## Tests
 This project uses Travis-CI for continuous integration. Every Pull Request to the master branch is initiated will launch travis, which in turn runs Jest tests. Pull requests are not merged until all travis-ci tests pass.
-
-## Data Flow
-
-<!-- TODO: make a data flow diagram...maybe? add it here -->
 
 
 ## Built With
@@ -137,12 +132,33 @@ This project uses Travis-CI for continuous integration. Every Pull Request to th
 * [Faker](https://www.npmjs.com/package/Faker)
 * [Superagent](https://www.npmjs.com/package/superagent)
 
+
+## Artillery Load Test
+
+one a local machine, we can get up to 580 user signup's over
+
+All virtual users finished
+Summary report @ 11:17:43(-0700) 2018-03-27
+  Scenarios launched:  5820
+  Scenarios completed: 0
+  Requests completed:  5820
+  RPS sent: 44.62
+  Request latency:
+    min: 68.2
+    max: 119543.8
+    median: 114063.3
+    p95: 118391.1
+    p99: 119068.4
+  Scenario counts:
+    Create Users: 5820 (100%)
+  Codes:
+    201: 5820
+
 ## Creators
 The Creators of Get the Flight Out!
 
-<!-- TODO: need some pics, bios, GH and Linkedin links! -->
+* [Heath Smith](https://github.com/Iamheathsmith)
+* [Steven Carpenter](https://github.com/stevegcarpenter)
 
-* Heath
-* Steve
-* Jordan
-* Liza
+* [Jordan Van Ness](https://github.com/Jordanwvn)
+* [Liza (Victoria) Oh](https://github.com/veoh1989)
