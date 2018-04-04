@@ -8,6 +8,7 @@ const faker = require('faker');
 const mocks = require('./mock');
 
 require('jest');
+jest.setTimeout(10000);
 
 
 describe('AMA Middleware', function () {
@@ -26,12 +27,13 @@ describe('AMA Middleware', function () {
   });
 
   describe('LOWFARE FLIGHT REQUEST', () => {
+    let date = new Date();
+    let nextday = date.toISOString().split('T');
     const request = {
       query: {
         origin: 'sea',
         destination: 'icn',
-        departure_date: '2018-03-29',
-        nonstop: 'true',
+        departure_date: nextday[0],
       },
     };
 
