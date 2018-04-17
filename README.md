@@ -136,7 +136,7 @@ This project uses Travis-CI for continuous integration. Every Pull Request to th
 
 ## Artillery Load Test
 
-one a local machine, we can get up to 580 user signup's over
+on a local machine, we can get up to 580 user signup's over
 ```
 All virtual users finished
 Summary report @ 11:17:43(-0700) 2018-03-27
@@ -155,6 +155,7 @@ Summary report @ 11:17:43(-0700) 2018-03-27
   Codes:
     201: 5820
 ```
+
 
 ## Creators
 The Creators of Get the Flight Out!
