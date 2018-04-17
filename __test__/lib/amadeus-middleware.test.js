@@ -60,7 +60,7 @@ describe('AMA Middleware', function () {
         query: {
           origin: 'sea',
           area: 'usa',
-          max_price: '200',
+          max_price: '150',
         },
         user: this.mockObj.user,
         inspiration: null,
