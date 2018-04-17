@@ -37,7 +37,7 @@ describe('AMA Middleware', function () {
       },
     };
 
-    it('returns flight data', () => {
+    it('returns flight data for one way flight', () => {
       return requestMock(amaMiddle.lowfareSearch, request, ()=>{})
         .then(({req}) => {
           expect(req.lowfare).toHaveProperty('currency');
@@ -48,14 +48,14 @@ describe('AMA Middleware', function () {
     });
   });
 
-  describe('sends off for flight data', function () {
+  describe('INSPIRATION SEARCH', function () {
     beforeAll(() => {
       return mocks.user.createOne()
         .then(mockObj => {
           this.mockObj = mockObj;
         });
     });
-    it('returns flight data', () => {
+    it('returns flight data with Sea as departing area', () => {
       const request = {
         query: {
           origin: 'sea',
