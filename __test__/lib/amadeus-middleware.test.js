@@ -8,7 +8,7 @@ const faker = require('faker');
 const mocks = require('./mock');
 
 require('jest');
-jest.setTimeout(10000);
+jest.setTimeout(15000);
 
 
 describe('AMA Middleware', function () {
@@ -37,7 +37,7 @@ describe('AMA Middleware', function () {
       },
     };
 
-    it('returns flight data', () => {
+    it('returns flight data for one way flight', () => {
       return requestMock(amaMiddle.lowfareSearch, request, ()=>{})
         .then(({req}) => {
           expect(req.lowfare).toHaveProperty('currency');
@@ -48,19 +48,19 @@ describe('AMA Middleware', function () {
     });
   });
 
-  describe('sends off for flight data', function () {
+  describe('INSPIRATION SEARCH', function () {
     beforeAll(() => {
       return mocks.user.createOne()
         .then(mockObj => {
           this.mockObj = mockObj;
         });
     });
-    it('returns flight data', () => {
+    it('returns flight data with Sea as departing area', () => {
       const request = {
         query: {
           origin: 'sea',
           area: 'usa',
-          max_price: '100',
+          max_price: '150',
         },
         user: this.mockObj.user,
         inspiration: null,
@@ -88,7 +88,7 @@ describe('AMA Middleware', function () {
         query: {
           origin: '',
           area: 'usa',
-          max_price: '100',
+          max_price: '200',
         },
         user: this.mockObj.user,
         inspiration: null,
