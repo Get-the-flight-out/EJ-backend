@@ -8,7 +8,7 @@ const faker = require('faker');
 const mocks = require('./mock');
 
 require('jest');
-jest.setTimeout(10000);
+jest.setTimeout(15000);
 
 
 describe('AMA Middleware', function () {
