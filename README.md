@@ -7,6 +7,7 @@
   <a href="#functionality">Functionality</a> •
   <a href="#route-examples">Route Examples</a> •
   <a href="#tests">Tests</a> •
+  <a href="#Artillery-Load-Test">Load Test</a> •
   <a href="#built-with">Built With</a> •
   <a href="#creators">Creators</a>
 </p>
@@ -18,6 +19,9 @@
 
 ### [Link to live site hosted on Heroku](https://gtfo-frontend.herokuapp.com/)
 
+### API KEY
+
+the API key is only good for 30 days. if the website fails to find any flights. it needs to be updated with a new API Key, Please contact one of the creator to have them update the site.
 
 ## Overview
 GTFO is an application designed to aid users with their travel needs. The user can find the lowest fare flights from their local and find inspirational flights to top destinations around the world. This travel application provides the user the ability to not only find the lowest fare to one location, it allows the user to see low fare flights to airports near their destination during their travel time. This feature will help our clients to explore their country of destination and/or countries near their destination in the most affordable way possible. Happy traveling!
